@@ -114,8 +114,36 @@ void pattern4(int n){
     
 }
 
+/*  Pattern 5
+Input Format: N = 3
+Result: 
+* * *
+* * 
+*
 
+Input Format: N = 6
+Result:
+* * * * * *
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
 
+*/
+
+void pattern5(int n){
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = n; j >= i; j--)
+        
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    
+}
 
 
 
@@ -136,6 +164,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern4(n);
+    pattern5(n);
 
 }
