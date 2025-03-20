@@ -74,9 +74,43 @@ Result:
 1 2 3 4 5
 1 2 3 4 5 6
 */
+void pattern3(int n){
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << j << " " ;
+        }
+        cout << "\n";
+    }
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
 int main(){
+    /*For coding judges online:
+    We take test cases
+    int t; //number of test cases
+    cin >> t;
+    for(int i = 0; i < t; i++){
     int n;
     cin >> n;
-    pattern2(n);
+    pattern1(n);
+    }
+    
+    */
+    int n;
+    cin >> n;
+    pattern3(n);
 
 }
