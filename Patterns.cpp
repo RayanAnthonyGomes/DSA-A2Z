@@ -324,6 +324,46 @@ void pattern9(int n){
     // }
 }
 
+/*  Pattern 10
+    Input Format: N = 3
+Result: 
+  *  
+  **
+  ***  
+  **
+  *   
+Input Format: N = 6
+Result:   
+     *
+     **
+     *** 
+     ****
+     *****
+     ******  --> symmetrical position
+     *****
+     ****
+     ***    
+     **
+     *
+*/
+
+void pattern10(int n){
+    for (int i = 1; i <= 2*n-1; i++)        
+    {
+        int stars = i;
+        if(i>n) {
+            stars = 2*n-i;
+        }
+        for (int j = 1; j <= stars; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    
+}
+
+
 int main(){
     /*For coding judges online:
     We take test cases
@@ -338,6 +378,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern9(n);
+    pattern10(n);
 
 }
