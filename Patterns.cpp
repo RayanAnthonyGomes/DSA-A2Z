@@ -215,7 +215,45 @@ void pattern7(int n){
     
 }
 
-
+/*  Pattern 8
+    Input Format: N = 3
+Result: 
+*****  
+ ***
+  *   
+  3 er belay: spaces: 0 ta; for line 0
+                      0,5,0 line er equal spaces. 0 te 0 spaces 1 e 1 spaces. stars kmne hoitese? stars: n+2
+                      1,3,1
+                      2,1,2
+Input Format: N = 6
+Result:     
+***********
+ *********
+  *******
+   ***** 
+    ***    
+     *
+*/
+void pattern8(int n){
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j < (2*n)-(2*i+1); j++)
+        {
+            cout << "*";
+        }
+        for (int j = 0; j < i; j++)
+        {
+            cout <<  " ";
+        }
+        cout << "\n";
+        
+    }
+    
+}
 
 
 int main(){
@@ -232,6 +270,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern7(n);
+    pattern8(n);
 
 }
