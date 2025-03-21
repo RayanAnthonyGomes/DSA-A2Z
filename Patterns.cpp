@@ -475,6 +475,49 @@ void pattern13(int n){
     
 }
 
+/*  Pattern 14
+    Input Format: N = 3
+Result: 
+A
+A B
+A B C
+
+Input Format: N = 6
+Result:   
+A
+A B
+A B C
+A B C D
+A B C D E
+A B C D E F
+*/
+void pattern14(int n){
+    for (int i = 0; i < n; i++)
+    {
+        for (char ch = 'A'; ch <= 'A'+i; ch++)
+        {
+            cout << ch << " " ;
+        }
+        cout << "\n";
+    }
+}   
+
+/*  Pattern 15
+Input Format: N = 3
+Result: 
+A B C
+A B
+A
+
+Input Format: N = 6
+Result:   
+A B C D E F
+A B C D E 
+A B C D
+A B C
+A B
+A
+*/
 
 
 
@@ -493,6 +536,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern13(n);
+    pattern14(n);
 
 }
