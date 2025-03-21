@@ -610,7 +610,35 @@ void pattern17(int n){
     
 }
 
+/*  Pattern 18
+Input Format: N = 3
+Result: 
+C
+B C
+A B C
 
+Input Format: N = 6
+Result:   
+F
+E F
+D E F
+C D E F
+B C D E F
+A B C D E F
+*/
+
+void pattern18(int n){
+    for (int i = 0; i < n; i++)
+    {
+        for (char ch = 'E'-i; ch <= 'E'; ch++)
+        {
+            cout << ch;
+
+        }
+        cout << endl;
+    }
+    
+}
 
 
 
@@ -631,6 +659,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern17(n);
+    pattern18(n);
 
 }
