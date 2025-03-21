@@ -791,8 +791,45 @@ void pattern20(int n){
     
 }
 
+/*  Pattern 21
+Input Format: N = 3
+Result: 
+***
+* *
+***
 
-
+Input Format: N = 6
+Result:   
+******
+*    *
+*    *
+*    *
+*    *
+******
+This problem is a very simple one where we just have to print a hollow rectangle. So, after observation, we see that the stars are only printed at the border of the rectangle, and on the rest of the positions, spaces are printed. Hence, the outer loop and inner loop both will loop for n times and in the inner loop we add a condition that if the row index or column index is equal to 0 or n-1, then stars should get printed otherwise spaces should be printed.
+*/
+void pattern21(int n)
+{
+     // outer loop for no. of rows.
+     for(int i=0;i<n;i++){
+         
+         // inner loop for printing the stars at borders only.
+         for(int j=0;j<n;j++){
+             
+             if(i==0 || j==0 || i==n-1 || j==n-1)
+                cout<<"*";
+                
+             // if not border index, print space.
+             else cout<<" ";
+         }
+         
+          // As soon as the stars for each iteration are printed, we move to the
+          // next row and give a line break otherwise all stars
+          // would get printed in 1 line.
+          cout<<endl;
+     }
+      
+}
 
 
 
@@ -820,6 +857,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern20(n);
+    pattern21(n);
 
 }
