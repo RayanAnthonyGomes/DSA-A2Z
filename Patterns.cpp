@@ -562,7 +562,53 @@ void pattern16(int n){
     
 }
 
+/*  Pattern 17
+Input Format: N = 3
+Result: 
+  A  
+ ABA 
+ABCBA
 
+
+Input Format: N = 6
+Result:   
+     A     
+    ABA    
+   ABCBA   
+  ABCDCBA  
+ ABCDEDCBA 
+ABCDEFEDCBA
+*/
+void pattern17(int n){
+    //outer loops --> n times chole
+    //spaces n-i-1
+    //Number of chars ==> break point is at 5/2 + 1
+    for (int i = 0; i < n; i++)
+    {
+    char ch = 'A';
+    int breakpoint = (2*i+1)/2;
+    for(int j=0;j<n-i-1;j++){
+        cout<<" ";
+    }
+    for (int j = 01; j <= 2*i + 1; j++)
+    {
+        cout << ch;
+        if (j<=breakpoint)  
+        {
+            ch++;
+        }else{
+            ch--;
+        }
+            
+    }
+    for(int j=0;j<n-i-1;j++){
+        cout<<" ";
+    }
+    cout << endl;
+        
+    }
+    
+}
 
 
 
@@ -585,6 +631,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern16(n);
+    pattern17(n);
 
 }
