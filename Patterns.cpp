@@ -831,18 +831,57 @@ void pattern21(int n)
       
 }
 
+/*  Pattern 22
+Input Format: N = 3
+Result: 
+3 3 3 3 3 
+3 2 2 2 3 
+3 2 1 2 3 
+3 2 2 2 3 
+3 3 3 3 3
 
-
-
-
-
-
-
-
-
-
-
-
+Input Format: N = 6
+Result:   
+6 6 6 6 6 6 6 6 6 6 6 
+6 5 5 5 5 5 5 5 5 5 6 
+6 5 4 4 4 4 4 4 4 5 6 
+6 5 4 3 3 3 3 3 4 5 6 
+6 5 4 3 2 2 2 3 4 5 6 
+6 5 4 3 2 1 2 3 4 5 6 
+6 5 4 3 2 2 2 3 4 5 6 
+6 5 4 3 3 3 3 3 4 5 6 
+6 5 4 4 4 4 4 4 4 5 6 
+6 5 5 5 5 5 5 5 5 5 6 
+6 6 6 6 6 6 6 6 6 6 6
+This problem is not generally asked in the interviews but it is good to practice such problems for the sake of logic building. So, what we can observe from the above examples is that on the perimeter of the square, there is an integer no. N which decreases by 1 as we move inside the square level-wise. Since this cannot be printed directly, we print it in reverse fashion (0’s at the border of the square, then 1 in the inner perimeter, then 2, and so on ) and then subtract the whole pattern by N at the end which just makes the outermost perimeter filled with the number N, inner perimeter with N-1 and finally the centermost element with the integer 1. The outer and the inner loop will run for the same number of times ( since we have to print square) i.e, 2*N-1 times and the inner loop would print the numbers based on the logic as described below ( for N = 4 ):
+*/
+void pattern22(int n)
+{
+     // Outer loop for no. of rows
+     for(int i=0;i<2*n-1;i++){
+         
+         // inner loop for no. of columns.
+         for(int j=0;j<2*n-1;j++){
+             
+             // Initialising the top, down, left and right indices of a cell.
+             int top = i;
+             int bottom = j;
+             int right = (2*n - 2) - j;
+             int left = (2*n - 2) - i;
+             
+             // Min of 4 directions and then we subtract from n
+             // because previously we would get a pattern whose border
+             // has 0's, but we want with border N's and then decreasing inside.
+             cout<<(n- min(min(top,bottom), min(left,right)))<<" ";
+         }
+         
+         // As soon as the numbers for each iteration are printed, we move to the
+         // next row and give a line break otherwise all numbers
+         // would get printed in 1 line.
+         cout<<endl;
+     }
+      
+}
 int main(){
     /*For coding judges online:
     We take test cases
@@ -857,6 +896,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern21(n);
-
+    pattern22(n);
+//Confusions: 22, 20,19,18, 13,12
 }
