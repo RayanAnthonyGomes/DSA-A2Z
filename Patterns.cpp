@@ -530,6 +530,45 @@ void pattern15(int n){
     
 }
 
+/*  Pattern 16
+Input Format: N = 3
+Result: 
+A
+B B
+C C C
+
+Input Format: N = 6
+Result:   
+A 
+B B
+C C C
+D D D D
+E E E E E
+F F F F F F
+*/
+
+void pattern16(int n){
+
+    for (int i = 0; i < n; i++)
+    {
+        char ch = 'A' + i;
+        
+        for (int j = 0; j<=i; j++)
+        {
+            cout << ch;
+        }
+        cout << endl;
+    }
+    
+}
+
+
+
+
+
+
+
+
 
 
 int main(){
@@ -546,6 +585,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern15(n);
+    pattern16(n);
 
 }
