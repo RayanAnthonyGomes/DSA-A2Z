@@ -1,6 +1,8 @@
 #include<bits/stdc++.h> //1 Library to include every libraries we need 
 
 using namespace std; // To shorten process of writing std:: cout << a;
+//What is stl in c++? 
+    //Algo, func, iterators, containers
 //1.
 //Functions
 /*
