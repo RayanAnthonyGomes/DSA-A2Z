@@ -640,6 +640,105 @@ void pattern18(int n){
     
 }
 
+/*  Pattern 19
+Input Format: N = 3
+Result: 
+******
+**  **
+*    *
+*    *
+**  **
+******
+
+Input Format: N = 6
+Result:   
+************
+*****  *****
+****    ****
+***      ***
+**        **
+*          *
+*          *
+**        **
+***      ***
+****    ****
+*****  *****
+************
+There are 4 general rules for solving a pattern-based question : 
+
+We always use nested loops for printing the patterns. For the outer loop, we count the number of lines/rows and loop for them.
+Next, for the inner loop, we focus on the number of columns and somehow connect them to the rows by forming a logic such that for each row we get the required number of columns to be printed.
+We print the numbers inside the inner loop.
+Observe symmetry in the pattern or check if a pattern is a combination of two or more similar patterns.
+Contrary to the previous patterns, this pattern observes symmetry. We can clearly see that the first half of the pattern is just a mirror image of the second half of the pattern. If we observe the first part, we see that like some previous patterns, it can also be divided into 3 parts i.e. stars, spaces, and then stars. In the first row, there are no spaces and 10 stars, in the second row, there are 2 spaces and 8 stars, and so on. So, we initialize the spaces with 0 initially which will eventually increment by 2 whenever we enter a new row. The stars, however, will be twice the row number, half of the stars would be printed before the spaces and half after the spaces.
+
+Similar will be the case of the second half of the pattern too. The initial number of spaces would be equal to 2*(N-1) and 1 star each would be printed on either side of the spaces initially. The spaces will decrease by 2 and the stars will increase by 2 in each row.
+
+*/
+
+void pattern19(int n){
+    //stars //spaces // stars
+    //has 2 parts
+    //first part
+    int initialSpace = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 01; j <= n-i; j++)
+        {
+            cout << "*";
+        }
+        for (int j = 0; j < initialSpace; j++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j < n-i; j++)
+        {
+            cout << "*";
+        }
+        initialSpace += 2;
+        cout << endl;
+    }
+    //second
+    
+    initialSpace = 2*n -2;
+      for(int i=1;i<=n;i++){
+          
+          //for printing the stars in the row.
+          for(int j=1;j<=i;j++){
+              cout<<"*";
+          }
+          
+          //for printing the spaces in the row.
+          for(int j=0;j<initialSpace;j++){
+              cout<<" ";
+          }
+          
+          //for printing the stars in the row.
+          for(int j=1;j<=i;j++){
+              cout<<"*";
+          }
+          
+          // The spaces decrease by 2 every time we hit a new row.
+          initialSpace-=2;
+          
+          // As soon as the stars for each iteration are printed, we move to the
+          // next row and give a line break otherwise all stars
+          // would get printed in 1 line.
+          cout<<endl;
+      }
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -659,6 +758,6 @@ int main(){
     */
     int n;
     cin >> n;
-    pattern18(n);
+    pattern19(n);
 
 }
