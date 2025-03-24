@@ -20,6 +20,7 @@ using namespace std; // To shorten process of writing std:: cout << a;
 
 //2.
 //Pairs
+
 /*
 Part of utility library, to store multiple "DataTypes"
 How Declare? --> pair<int,int> p = {1,3};
@@ -33,6 +34,14 @@ Can we use arrays in pairs?
 --> pair<int,int> arr[] = {{1,3}, {2,4}, {6,7}};
             cout << arr[1].second;
 */
+
+//3.
+//Vectors
+/*
+This is used to replace arrrays. Like we cant change the size of a predefined array. 
+This is dynamical array which can change its size as per user needs.
+
+*/
 void myPair(){
     pair<int,int> p = {1,3};
     cout << p.first << p.second;
@@ -45,6 +54,102 @@ void myPair(){
 
 
 }
+
+
+void myVector(){
+//Declaration
+vector<int> v;
+//add elems
+v.push_back(1); // {1,  }
+v.emplace_back(2); // {1,2} auto increases size of the vector and adds 2
+
+//add pairs to vectors
+vector<pair<int,int>> ve; 
+ve.push_back({1,2}); //Using push back we need to give the pair. hence we added {} to it
+ve.emplace_back(1,2); //Automatically gets the datatype as pair and takes {1,2}
+
+//Predefined vector
+vector<int> vec(5,100); // {100,100,100,100,100}
+//or
+vector<int> vec(5); // { , , , , }  stores garbage values in place of 5
+
+//copying vectors
+vector<int> v1(5,100);
+vector<int> v2(v1);  //copied from v1. 
+
+//Accessing elements inside vector
+//1. Using features of array
+cout << v[0];
+//or
+cout << v.back(); //prints the last elem
+
+//2.Using iterator
+    //a. Define Iterator:
+    //An iterator is an object that allows sequential access to elements in a collection (like lists, tuples, or dictionaries) without exposing the underlying structure. It follows the Iterator Design Pattern
+    //v = {1,2,3,4,5}
+    //b. v.begin()
+    vector<int>::iterator itName = v.begin(); // starting element of vector .. --> {1}
+    itName++; //goes after 1--> {2}
+    cout << *(itName) << " "; //accesses the value of the iterator memory address --> prints {2}
+    
+    //c.v.end()
+    vector<int>::iterator it = v.end(); //points to smth just after last element 
+    //we can get it by it-- --> subtract 1 from end to get the last elem
+    it--;
+    cout << *(it);
+    
+    //d. v.rend()
+    vector<int>::iterator t = v.rend(); 
+    //e. v.rbegin();
+    vector<int>::iterator t = v.rbegin(); 
+    
+
+    //printing vector
+    //Method a
+    for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+    {
+        cout << *(it) << " ";
+    }
+    //method b
+    for (auto it = v.begin(); it != v.end(); it++)
+    {
+        cout << *(it) << " ";
+    }
+    //method c for each loop
+    for (auto it : v)
+    {
+        cout << it << " ";
+    }
+
+
+    //Deletion in Vector
+    //v.erase(iterator);
+        //{1,2,3,4,5,6}
+        v.erase(v.begin()+1);
+        v.erase(v.begin()+2, v.begin() + 4)
+        //[Start,end) --> end is given just right after the element i wanna remove
+
+    
+
+    //Insert Functions in vector
+        vector<int> v(2,100);
+        v.insert(v.begin(),300); 
+        //{300,100,100}
+        v.insert(v.begin()+1,2,10); //add multiple num; {300,10,10,100,100}
+
+        vector<int> copy(3,100);
+        v.insert(v.begin(),copy.begin(),copy.end());
+
+    
+    //more
+    v.size(); //how many elems
+    v.pop_back; //removes last elem
+    v1.swap(v2); //swaps v2 to v1
+    v.clear(); // shows if the vector is empty or not
+}
+
+
+
 int main(){
 
 }
