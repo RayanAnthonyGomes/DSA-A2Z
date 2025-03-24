@@ -58,6 +58,9 @@ This is dynamical array which can change its size as per user needs.
 //7.Queue
 //Similar to stack but FIFO --> First in First out
 
+//8.Priority Queue
+//Max elems stay at top
+//Also can handle minimum order
 
 
 void myPair(){
@@ -212,7 +215,18 @@ void myQueue(){
 }
 
 
+void myPriorityQueue(){
+    priority_queue<int> pq;
+    pq.push(5);
+    pq.push(2);
+    pq.push(9); //{9,5,2}
 
+    //Minimum heap
+    priority_queue<int, vector<int>, greater<int>> pq;
+    pq.push(5);
+    pq.push(2);
+    pq.push(1); // {1,2,5}
+}
 
 
 
