@@ -65,6 +65,27 @@ This is dynamical array which can change its size as per user needs.
 //9.Set
 //Unique, sorted order
 
+// 10.multiset
+// obeys sorted and duplicate elements also
+// rest are same as set 
+
+// 11. unordered_set
+// doesnt store in a sorted order 
+// unique elements for sure
+// O(1)
+// But lower / upper bound doesnt work 
+
+// 12. Map 
+// Same values but different roll numbers. Where roll numbers are actually keys 
+// stores everything {key, value} 
+
+// 13. multimap 
+// Can store duplicate keys 
+
+// 14. Unordered map 
+// not stored in sorted order but unique keys
+// O(1)
+
 void myPair(){
     pair<int,int> p = {1,3};
     cout << p.first << p.second;
@@ -253,6 +274,55 @@ void mySet(){
 
     //Complexity
     //Always --> log( )
+}
+
+void multiset(){
+    multiset<int> ms;
+    ms.insert(1);
+    ms.insert(1);
+    ms.insert(1); {1,1,1}
+
+    ms.erase(1); //removes all 1's
+
+    ms.erase(ms.find(1)); //removes only the 1 specified
+
+    ms.erase(ms.find(1), ms.find(1)+2); goes till 2. //{1,1,1} first 2 1's are deleted here
+}
+
+void UnorderedSet(){
+    unordered_set<int> ust;
+}
+
+void map(){
+    //map<key,value> nameofmap;
+    map<int,int> mpp;
+    mpp[1] = 2; //key 1 and value is 2
+    mpp.emplace({3,1});
+    mpp.insert({2,4}); //--> {{1,2} {2,4} {3,1}} in a ordered fashion
+
+    map<pair<int,int>,int> mpp;
+    mpp[{2,3}] = 10; {{2,3},10}
+
+    //printing
+    for(auto it : mpp){
+        cout << it.first <<" " << it.second << endl;
+        //prints the whole map
+        1 2
+        2 4
+        3 1
+    }
+    cout << mpp[1] ; ==>2
+    auto it = mpp.find(3);
+    cout << *(it).second; //Key 3 find korbe ar second jinish ta print korbe which is 1
+    auto it = mpp.find(5); //since 5 is not there it will return the v.end()
+
+}
+void multiMap(){
+    
+}
+
+void UnorderedMap(){
+
 }
 
 
