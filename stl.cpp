@@ -50,6 +50,11 @@ This is dynamical array which can change its size as per user needs.
 //5.Deque
 //all functions are same as vectors and lists
 
+// 6.Stack
+//LIF0 -> Last in first out
+// Only 3 funtions : push pop top
+
+
 
 void myPair(){
     pair<int,int> p = {1,3};
@@ -177,7 +182,20 @@ void myDeque(){
 }
 
 
+void myStack(){
+    stack<int> st;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(4);
+    st.emplace(5);
 
+    st.top();// --> 5
+    st.pop(); //removes 5
+    st.size();
+    st.empty(); //false
+    st1.st.swap(st2);
+}
 int main(){
 
 }
