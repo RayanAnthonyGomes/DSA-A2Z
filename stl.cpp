@@ -55,6 +55,10 @@ This is dynamical array which can change its size as per user needs.
 // Only 3 funtions : push pop top
 
 
+//7.Queue
+//Similar to stack but FIFO --> First in First out
+
+
 
 void myPair(){
     pair<int,int> p = {1,3};
@@ -196,6 +200,22 @@ void myStack(){
     st.empty(); //false
     st1.st.swap(st2);
 }
+
+void myQueue(){
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.back() += 5; //{1,2,3,9}
+    q.pop(); //{2,3,9}
+}
+
+
+
+
+
+
 int main(){
 
 }
