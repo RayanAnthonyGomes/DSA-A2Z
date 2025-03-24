@@ -62,6 +62,8 @@ This is dynamical array which can change its size as per user needs.
 //Max elems stay at top
 //Also can handle minimum order
 
+//9.Set
+//Unique, sorted order
 
 void myPair(){
     pair<int,int> p = {1,3};
@@ -228,6 +230,30 @@ void myPriorityQueue(){
     pq.push(1); // {1,2,5}
 }
 
+void mySet(){
+    set<int> st;
+    st.insert(1);
+    st.insert(2);
+    st.emplace(1);
+    st.insert(5); //{1,2,5}
+
+    auto it = st.find(2); //--> Iterator points at 2
+    auto it = st.find (6); //We dont have 6 so it points right after 5
+
+    st.erase(4);
+
+    int cnt = st.count(1); //if we have --> 1; if we dont have --> 0
+    //{1,2,3,4,5,6}
+    auto it1 = st.find(3);
+    auto it2 = st.find(5);
+    st.erase(it1,it2) //{1,2,5,6} [start,end)
+
+    st.lower_bound(2);
+    st.upper_bound(3); //Explained on another video will catch on it later
+
+    //Complexity
+    //Always --> log( )
+}
 
 
 int main(){
