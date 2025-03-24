@@ -42,6 +42,15 @@ This is used to replace arrrays. Like we cant change the size of a predefined ar
 This is dynamical array which can change its size as per user needs.
 
 */
+
+//4.
+//List
+//Same as vectors but comes cheaper
+
+//5.Deque
+//all functions are same as vectors and lists
+
+
 void myPair(){
     pair<int,int> p = {1,3};
     cout << p.first << p.second;
@@ -147,6 +156,18 @@ cout << v.back(); //prints the last elem
     v1.swap(v2); //swaps v2 to v1
     v.clear(); // shows if the vector is empty or not
 }
+
+
+void myList(){
+    list<int> ls;
+    ls.push_back(1); {1}
+    ls.emplace_back(2); {1,2}
+    ls.push_front(4); {4,1,2}
+    ls.emplace_front(5); {5,4,1,2}
+
+    //all other funtions are same
+}
+
 
 
 
