@@ -168,6 +168,13 @@ void myList(){
     //all other funtions are same
 }
 
+void myDeque(){
+    deque<int> ls;
+    ls.push_back(1); {1}
+    ls.emplace_back(2); {1,2}
+    ls.push_front(4); {4,1,2}
+    ls.emplace_front(5); {5,4,1,2}
+}
 
 
 
