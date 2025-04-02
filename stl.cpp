@@ -325,7 +325,77 @@ void UnorderedMap(){
 
 }
 
+//Basic algorithm
+
+void sortNum(){
+
+//for arrays and vectors
+    int a[4] = {3,5,1,2};
+        sort(a,a+4);
+//start is included but end is excluded
+
+//if we had a vector we would use:
+        sort(v.begin(), v.end());
+
+//If we wanted to sort a specific part
+//   -->{3,1,4,5} lets say we want to do 1 and 4
+        sort(a+1,a+3); //as i said start is inclu but end is exclu
+}
+
+void sortInDescending(){
+    //What if i want to sort in desc. order
+    sort(a,a+n, greater<int>)
+    
+}
+
+//take multiple data types of your desire. In my case i have pair. so i will copy paste and make it 2 pairs
+
+bool MyComperator(pair<int,int> p1, pair<int,int> p2){
+    if(p1.second < p2.second) return true; //this is my optimal desire(correct way)
+    if(p1.second > p2.second) return false; //not my correct way
+    //otherwise they are the same. Now if they are same we check the first elem
+    if(p1.first > p2.first) return true; 
+    return false;
+}
+void sortInMyWay(){
+    //What if i have a specific way to sort 
+    /*
+    lets say we have a pair 
+    pair<int,int> a[] = {{1,2}, {4,1}, {3,1}}
+    //sort by second element in increasing fashion
+    //if the element is same do it by the 1st element and in descending order
+    */
+   pair<int,int> a[] = {{1,2}, {4,1}, {3,1}};
+    sort(start,end,MyComperator);
+}
+
+void NumToBinary(){
+    int n = 7;
+    int co = __builtin_popcount();
+    //returns 3 as it has 7 = 111
+
+    long long nn = 1231242135412451;
+    int coo = __builtin_popcountll();
+}
+
+void nextPermutation(){
+    //always start in sorted fashion
+    string s = "123";
+    sort(s.begin(), s.end());
+
+    do
+    {
+        cout << s << endl;
+    } while (next_permutation(s.begin(),s.end()));
+    
+}
+
+void maxMin(){
+    int a[n];
+    int maxi = *max_element(a, a+n);
+    int mini = *min_element(a, a+n);
+}
 
 int main(){
-
+//endl of stl;
 }
