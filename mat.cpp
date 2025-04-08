@@ -32,7 +32,17 @@ void countHowManyDigits(int n){
     int cnt = (int)(log10(n)+1);
 }
 
-void Reverse Number
+void ReverseNumber(int n){
+    int RevN = 0;
+    while (n>0)
+    {
+        int lastdigit = n%10;
+        n = n/10;
+        RevN = (RevN*10) + lastdigit;
+    }
+    
+}
+
 int main(){
     int n;
     cin >> n;
