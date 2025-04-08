@@ -43,6 +43,25 @@ void ReverseNumber(int n){
     
 }
 
+void Palindrome(int n){
+    //121 == reverse == 121 == Palindrome
+    //Reverse number == N 
+    int revN = 0, duplicate = n;
+    while (n>0)
+    {
+        int lastDigit = n%10;
+        revN = (revN*10) + lastDigit;
+        n = n/10;
+    }
+    if(revN=duplicate){
+        return true;
+    }else{
+        return false;
+    }
+    
+}
+
+
 int main(){
     int n;
     cin >> n;
