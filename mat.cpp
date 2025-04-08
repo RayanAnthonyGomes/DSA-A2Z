@@ -133,6 +133,22 @@ void PrimeNumbers(int n){
     
 }
 
+void GCDslashHCF(int n){
+    //eucledian algo: gcd(a,b) = gcd(a-b,b) = 0 
+    // a>b gcd(a,b) == gcd(a%b,b)  greater%smaller  if one is 0 other is gcd
+
+    int a,b;
+    while (a>0 && b>0)      
+    {
+        if(a>b) a%b;
+        else b = b%a;
+
+    }
+    if(a==0) print(b);
+    else print (a);
+    //tc = o(logfi (min(a,b))) log fi because it is changing 
+    
+}
 
 int main(){
     int n;
