@@ -72,10 +72,42 @@ void ArmStrongNumbers(int n){
 
     }
     if( dup == sum ){
-        cout >> "Armstrong";
+        cout << "Armstrong";
     }
 }
 
+void Divisors(int n){
+
+   // n = 10 == 1,2,5,10;
+   //way 1;
+   for (int i = 1; i <= n; i++)
+   {
+        if (n%i == 0)
+        {
+            cout << i;
+        }
+        //O(nLogN) where n is the number of factors    
+   }
+   
+   //way 2:
+   vector <int> ls;
+   for (int i = 01; i <= sqrt(n); i++)
+   {
+        if (n%i == 0)
+        {
+            ls.push_back(i);
+            if((n%i) != i){
+                ls.push_back(n/i);
+            }
+        }
+        sort(ls.begin(), ls.end());
+        for(auto it:ls){
+            cout << it << " ";
+        }
+        
+   }
+   
+}
 int main(){
     int n;
     cin >> n;
