@@ -18,6 +18,21 @@ void DigitConcept(int n)
     }
     
 }
+
+void countHowManyDigits(int n){
+    //tc ==O ( log10(N) )
+    int countMyDigits = 0;
+    while (n>0)
+    {
+        countMyDigits = countMyDigits +1;
+        n = n/10;
+    }
+    
+//Second way:
+    int cnt = (int)(log10(n)+1);
+}
+
+void Reverse Number
 int main(){
     int n;
     cin >> n;
