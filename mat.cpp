@@ -106,8 +106,34 @@ void Divisors(int n){
         }
         
    }
-   
+    //O(sqrt(n))   
 }
+
+void PrimeNumbers(int n){
+    //exactly 2 factors: 1 and itslef
+    int count = 0;
+    for (int i = 01; i < n; i++)
+    {
+        if(n%i==0){
+            count++;
+            if((n/i)!=i){
+                count++;
+    
+            }
+        }
+       
+        if(count == 2){
+            cout << "true";
+        }else{
+            cout << "false;";
+
+        }
+        //big0{sqrt(n)}
+    }
+    
+}
+
+
 int main(){
     int n;
     cin >> n;
