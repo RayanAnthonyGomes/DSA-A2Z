@@ -18,6 +18,7 @@ void finite(){
 } 
  
 int main(){
-
+    infinite();
+    finite();
 
 }
