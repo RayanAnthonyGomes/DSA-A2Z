@@ -56,7 +56,8 @@ void insertion_sort(int arr[], int n){
             arr[j] = temp;
             j--;
         }
-        
+        //avg/worst ==> o(NxN)
+        //best ==> (already sorted) --> o(n)
     }
     
 }
